@@ -43,7 +43,6 @@ public class DiphontineEquation {
                     gcd = i;
                 }
             }
-
         }
 
         System.out.println("gcd(" + numero_a + "," + numero_b + ")" + " = " + gcd + "\n"
@@ -51,14 +50,28 @@ public class DiphontineEquation {
 
         System.out.println("como una ecuacion diofantica tiene infinitas soluciones,\n elija hasta que numero desea buscar solucion");
         int rangoRespuestas = lectura.nextInt();
-        for (int x=1; x < rangoRespuestas; x++){
-            if (gcd - numero_a*x% numero_b == 0){
-                System.out.println("x  = " + x);
-                System.out.println("y = "+(gcd - numero_a*x)/numero_b);
-                System.out.println("el siguiente par que resuleve la ecuacion es ");
-                        
+
+        if (numero_a <= numero_b) {
+            for (int x = 1; x < rangoRespuestas; x++) {
+                if (gcd - numero_a * x % numero_b == 0) {
+                    System.out.println("x  = " + x);
+                    System.out.println("y = " + (gcd - numero_a * x) / numero_b);
+                    System.out.println("el siguiente par que resuelve la ecuacion es ");
+
+                }
             }
+        } else {
+                        for (int x = 1; x < rangoRespuestas; x++) {
+                if (gcd - numero_b * x % numero_a == 0) {
+                    System.out.println("x  = " + x);
+                    System.out.println("y = " + (gcd - numero_a * x) / numero_b);
+                    System.out.println("el siguiente par que resuelve la ecuacion es ");
+
+                }
+            }
+
         }
+
     }
 
 }
